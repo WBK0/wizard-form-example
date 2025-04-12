@@ -1,11 +1,9 @@
 import { z } from 'zod';
-import { UnitOfMeasure } from '@/types/unit-of-measure.types.ts';
+import { UnitOfMeasure } from '@/types/unit-of-measure.enum.ts';
 
 const material = z.object({
-    number: z.preprocess(
-        (value) => (value && typeof value === 'string' && value.length > 0 ? value : undefined),
-        z.string().max(12)
-    ),
+    uuid: z.string().uuid(),
+    number: z.string().min(1).max(12),
     description: z.string().max(255),
     sku: z.string().max(18),
     price: z.number().positive(),
