@@ -2,7 +2,8 @@ import { Link, Route, Routes } from 'react-router-dom';
 import Home from '@/pages/home.tsx';
 import MaterialsManagementWrapper from '@/modules/materials-management/materials-management-wrapper.tsx';
 import MaterialsWrapper from '@/modules/materials-management/materials/materials-wrapper.tsx';
-import CreateMaterialForm from '@/modules/materials-management/materials/pages/form/create-material-form.tsx';
+import CreateMaterialFormWrapper from '@/modules/materials-management/materials/pages/form/create/create-material-form-wrapper.tsx';
+import CreateMaterialFormDetails from '@/modules/materials-management/materials/pages/form/create/create-material-form-details.tsx';
 
 function App() {
   return (
@@ -22,7 +23,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/materials-management" element={<MaterialsManagementWrapper />}>
             <Route path="materials" element={<MaterialsWrapper />}>
-              <Route path="create" element={<CreateMaterialForm />} />
+              <Route path="create" element={<CreateMaterialFormWrapper />}>
+                <Route path="" element={<CreateMaterialFormDetails />} />
+              </Route>
             </Route>
           </Route>
         </Routes>
