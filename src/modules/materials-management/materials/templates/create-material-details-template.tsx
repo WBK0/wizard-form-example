@@ -9,11 +9,6 @@ import {
 
 const CreateMaterialDetailsTemplate = () => {
     const methods = useForm<MaterialDetails>({
-        defaultValues: {
-            number: '',
-            description: '',
-            sku: '',
-        },
         resolver: zodResolver(materialDetails),
     });
 
