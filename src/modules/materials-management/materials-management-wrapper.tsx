@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-const WizardFormWrapper = () => {
+const MaterialsManagementWrapper = () => {
   return (
     <div>
       <Outlet />
@@ -8,4 +8,4 @@ const WizardFormWrapper = () => {
   );
 };
 
-export default WizardFormWrapper;
+export default MaterialsManagementWrapper;
