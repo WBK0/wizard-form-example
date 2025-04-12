@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <nav>
-        <ul className="flex justify-center gap-4 font-semibold py-2 shadow-md">
+        <ul className="flex justify-center gap-4 font-light py-2 shadow-md">
           <li>
             <Link to="/">Home</Link>
           </li>
