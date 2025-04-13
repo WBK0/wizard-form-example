@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-const CreateMaterialFormWrapper = () => {
+const CreateMaterialForm = () => {
     return (
         <div className="flex flex-col">
             <h1 className="text-2xl">Tworzenie materiału</h1>
@@ -11,4 +11,4 @@ const CreateMaterialFormWrapper = () => {
     );
 };
 
-export default CreateMaterialFormWrapper;
+export default CreateMaterialForm;

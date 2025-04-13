@@ -25,4 +25,4 @@ const CreateMaterialDetailsTemplate = () => {
     );
 };
 
-export { CreateMaterialDetailsTemplate };
+export default CreateMaterialDetailsTemplate;
