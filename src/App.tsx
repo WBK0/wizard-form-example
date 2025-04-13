@@ -3,8 +3,11 @@ import Home from '@/pages/home.tsx';
 import MaterialsManagementWrapper from '@/modules/materials-management/materials-management-wrapper.tsx';
 import MaterialsWrapper from '@/modules/materials-management/materials/materials-wrapper.tsx';
 import CreateMaterialForm from '@/modules/materials-management/materials/pages/form/create/create-material-form.tsx';
-import CreateMaterialDetailsTemplate from '@/modules/materials-management/materials/templates/create-material-details-template.tsx';
-import CreateMaterialCharacteristicsTemplate from '@/modules/materials-management/materials/templates/create-material-characteristics-template.tsx';
+import CreateMaterialDetailsTemplate from '@/modules/materials-management/materials/templates/create-form/create-material-details-template.tsx';
+import CreateMaterialCharacteristicsTemplate from '@/modules/materials-management/materials/templates/create-form/create-material-characteristics-template.tsx';
+import EditMaterialForm from '@/modules/materials-management/materials/pages/form/edit/edit-material-form.tsx';
+import EditMaterialDetailsTemplate from '@/modules/materials-management/materials/templates/edit-form/edit-material-details-template.tsx';
+import EditMaterialCharacteristicsTemplate from '@/modules/materials-management/materials/templates/edit-form/edit-material-characteristics-template.tsx';
 
 function App() {
     return (
@@ -16,6 +19,9 @@ function App() {
                     </li>
                     <li>
                         <Link to="/materials-management/materials/create">Create Material</Link>
+                    </li>
+                    <li>
+                        <Link to="/materials-management/materials/edit">Edit Material</Link>
                     </li>
                 </ul>
             </nav>
@@ -29,6 +35,13 @@ function App() {
                                 <Route
                                     path="characteristics"
                                     element={<CreateMaterialCharacteristicsTemplate />}
+                                />
+                            </Route>
+                            <Route path="edit" element={<EditMaterialForm />}>
+                                <Route path="" element={<EditMaterialDetailsTemplate />} />
+                                <Route
+                                    path="characteristics"
+                                    element={<EditMaterialCharacteristicsTemplate />}
                                 />
                             </Route>
                         </Route>

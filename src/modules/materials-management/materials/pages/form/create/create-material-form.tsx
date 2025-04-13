@@ -1,33 +1,16 @@
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs.tsx';
+import { Outlet } from 'react-router-dom';
+import { MaterialTabsOrganism } from '@/modules/materials-management/materials/organisms/material-tabs-organism.tsx';
+import { CreateMaterialFormProvider } from '@/modules/materials-management/materials/pages/form/create/provider/create-material-form-provider.tsx';
 
 const CreateMaterialForm = () => {
-    const { pathname } = useLocation();
-    const navigate = useNavigate();
-
     return (
         <div className="flex flex-col">
             <h1 className="text-2xl">Tworzenie materiału</h1>
             <div className="flex flex-col mt-8">
-                <Tabs value={pathname} className="w-full mb-4">
-                    <TabsList>
-                        <TabsTrigger
-                            value="/materials-management/materials/create"
-                            onClick={() => navigate('/materials-management/materials/create')}
-                        >
-                            Detale
-                        </TabsTrigger>
-                        <TabsTrigger
-                            value="/materials-management/materials/create/characteristics"
-                            onClick={() =>
-                                navigate('/materials-management/materials/create/characteristics')
-                            }
-                        >
-                            Charakterystyki
-                        </TabsTrigger>
-                    </TabsList>
-                </Tabs>
-                <Outlet />
+                <MaterialTabsOrganism mode="create" />
+                <CreateMaterialFormProvider>
+                    <Outlet />
+                </CreateMaterialFormProvider>
             </div>
         </div>
     );
